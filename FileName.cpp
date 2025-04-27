@@ -1,83 +1,88 @@
 #include <stdio.h>
 
+//ì˜ˆì œ1
 int main() {
     int num;
-    printf("10Áø¼ö ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
-    scanf_s("%d", &num); // »ç¿ëÀÚ·ÎºÎÅÍ 10Áø¼ö ÀÔ·Â ¹Ş±â
+    printf("10ì§„ìˆ˜ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+    scanf_s("%d", &num); // ì‚¬ìš©ìë¡œë¶€í„° 10ì§„ìˆ˜ ì…ë ¥ ë°›ê¸°
 
-    printf("16Áø¼ö·Î´Â %X ÀÔ´Ï´Ù.\n", num); // %X¸¦ »ç¿ëÇØ 16Áø¼ö Ãâ·Â
+    printf("16ì§„ìˆ˜ë¡œëŠ” %X ì…ë‹ˆë‹¤.\n", num); // %Xë¥¼ ì‚¬ìš©í•´ 16ì§„ìˆ˜ ì¶œë ¥
     return 0;
 }
 
 void print_gugudan(int start, int end) {
     int i, dan;
-    for (dan = start; dan <= end; dan++) { // startºÎÅÍ end±îÁö ´Ü ¹İº¹
-        printf("\n%d´Ü:\n", dan);
-        for (i = 1; i <= 9; i++) { // °¢ ´Ü¸¶´Ù 1~9±îÁö °öÇØ¼­ Ãâ·Â
+    for (dan = start; dan <= end; dan++) { // startë¶€í„° endê¹Œì§€ ë‹¨ ë°˜ë³µ
+        printf("\n%dë‹¨:\n", dan);
+        for (i = 1; i <= 9; i++) { // ê° ë‹¨ë§ˆë‹¤ 1~9ê¹Œì§€ ê³±í•´ì„œ ì¶œë ¥
             printf("%d x %d = %d\n", dan, i, dan * i);
         }
     }
 }
 
+//ì˜ˆì œ2
 int main() {
     int a, b, temp;
-    printf("Ã¹ ¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
-    scanf_s("%d", &a); // Ã¹ ¹øÂ° ¼ıÀÚ ÀÔ·Â
-    printf("µÎ ¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
-    scanf_s("%d", &b); // µÎ ¹øÂ° ¼ıÀÚ ÀÔ·Â
+    printf("ì²« ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+    scanf_s("%d", &a); // ì²« ë²ˆì§¸ ìˆ«ì ì…ë ¥
+    printf("ë‘ ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+    scanf_s("%d", &b); // ë‘ ë²ˆì§¸ ìˆ«ì ì…ë ¥
 
-    // ÀÔ·Â ¼ø¼­ »ó°ü¾øÀÌ ÀÛÀº ¼ıÀÚ°¡ start°¡ µÇµµ·Ï Á¤·Ä
+    // ì…ë ¥ ìˆœì„œ ìƒê´€ì—†ì´ ì‘ì€ ìˆ«ìê°€ startê°€ ë˜ë„ë¡ ì •ë ¬
     if (a > b) {
         temp = a;
         a = b;
         b = temp;
     }
 
-    print_gugudan(a, b); // ±¸±¸´Ü Ãâ·Â ÇÔ¼ö È£Ãâ
+    print_gugudan(a, b); // êµ¬êµ¬ë‹¨ ì¶œë ¥ í•¨ìˆ˜ í˜¸ì¶œ
 
     return 0;
 }
 
-// À¯Å¬¸®µå È£Á¦¹ıÀ¸·Î ÃÖ´ë°ø¾à¼ö ±¸ÇÏ´Â ÇÔ¼ö
+//ì˜ˆì œ3
+// ìœ í´ë¦¬ë“œ í˜¸ì œë²•ìœ¼ë¡œ ìµœëŒ€ê³µì•½ìˆ˜ êµ¬í•˜ëŠ” í•¨ìˆ˜
 int gcd(int a, int b) {
     int temp;
-    while (b != 0) { // b°¡ 0ÀÌ µÉ ¶§±îÁö ¹İº¹
-        temp = a % b; // a¸¦ b·Î ³ª´« ³ª¸ÓÁö¸¦ temp¿¡ ÀúÀå
-        a = b; // b¸¦ a·Î
-        b = temp; // ³ª¸ÓÁö¸¦ b·Î
+    while (b != 0) { // bê°€ 0ì´ ë  ë•Œê¹Œì§€ ë°˜ë³µ
+        temp = a % b; // aë¥¼ bë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ë¥¼ tempì— ì €ì¥
+        a = b; // bë¥¼ aë¡œ
+        b = temp; // ë‚˜ë¨¸ì§€ë¥¼ bë¡œ
     }
-    return a; // ÃÖ´ë°ø¾à¼ö ¹İÈ¯
+    return a; // ìµœëŒ€ê³µì•½ìˆ˜ ë°˜í™˜
 }
 
+//ì˜ˆì œ4
 int main() {
     int num1, num2;
-    printf("Ã¹ ¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ì²« ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
     scanf_s("%d", &num1);
-    printf("µÎ ¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ë‘ ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
     scanf_s("%d", &num2);
 
-    printf("ÃÖ´ë °ø¾à¼ö´Â %d ÀÔ´Ï´Ù.\n", gcd(num1, num2));
+    printf("ìµœëŒ€ ê³µì•½ìˆ˜ëŠ” %d ì…ë‹ˆë‹¤.\n", gcd(num1, num2));
     return 0;
 }
 
+//ì˜ˆì œ5
 int main() {
     int cream, shrimp, coke;
-    int total = 7000; // ÇöÀç °¡Áø µ·
+    int total = 7000; // í˜„ì¬ ê°€ì§„ ëˆ
     int cream_price = 500;
     int shrimp_price = 700;
     int coke_price = 400;
 
-    printf("°¡´ÉÇÑ ±¸¸Å Á¶ÇÕ:\n");
+    printf("ê°€ëŠ¥í•œ êµ¬ë§¤ ì¡°í•©:\n");
 
-    // Å©¸²»§À» 1°³ ÀÌ»ó »ç´Â °æ¿ì ¹İº¹
+    // í¬ë¦¼ë¹µì„ 1ê°œ ì´ìƒ ì‚¬ëŠ” ê²½ìš° ë°˜ë³µ
     for (cream = 1; cream <= total / cream_price; cream++) {
-        // »õ¿ì±øÀ» 1°³ ÀÌ»ó »ç´Â °æ¿ì ¹İº¹
+        // ìƒˆìš°ê¹¡ì„ 1ê°œ ì´ìƒ ì‚¬ëŠ” ê²½ìš° ë°˜ë³µ
         for (shrimp = 1; shrimp <= total / shrimp_price; shrimp++) {
-            // Äİ¶ó¸¦ 1°³ ÀÌ»ó »ç´Â °æ¿ì ¹İº¹
+            // ì½œë¼ë¥¼ 1ê°œ ì´ìƒ ì‚¬ëŠ” ê²½ìš° ë°˜ë³µ
             for (coke = 1; coke <= total / coke_price; coke++) {
-                // ÃÑÇÕÀÌ 3500¿øÀÌ µÇ´Â Á¶ÇÕ Ã£±â
+                // ì´í•©ì´ 3500ì›ì´ ë˜ëŠ” ì¡°í•© ì°¾ê¸°
                 if (cream * cream_price + shrimp * shrimp_price + coke * coke_price == total) {
-                    printf("Å©¸²»§ %d°³, »õ¿ì±ø %d°³, Äİ¶ó %d°³\n", cream, shrimp, coke);
+                    printf("í¬ë¦¼ë¹µ %dê°œ, ìƒˆìš°ê¹¡ %dê°œ, ì½œë¼ %dê°œ\n", cream, shrimp, coke);
                 }
             }
         }
@@ -86,46 +91,47 @@ int main() {
     return 0;
 }
 
-// ¼Ò¼öÀÎÁö ÆÇº°ÇÏ´Â ÇÔ¼ö
+//ì˜ˆì œ6
+// ì†Œìˆ˜ì¸ì§€ íŒë³„í•˜ëŠ” í•¨ìˆ˜
 int is_prime(int num) {
     int i;
-    if (num < 2) return 0; // 2º¸´Ù ÀÛÀº ¼ö´Â ¼Ò¼ö°¡ ¾Æ´Ô
+    if (num < 2) return 0; // 2ë³´ë‹¤ ì‘ì€ ìˆ˜ëŠ” ì†Œìˆ˜ê°€ ì•„ë‹˜
 
-    // 2ºÎÅÍ sqrt(num)±îÁö ³ª´²º¸±â
+    // 2ë¶€í„° sqrt(num)ê¹Œì§€ ë‚˜ëˆ ë³´ê¸°
     for (i = 2; i * i <= num; i++) {
-        if (num % i == 0) // ³ª´©¾î ¶³¾îÁö¸é ¼Ò¼ö ¾Æ´Ô
+        if (num % i == 0) // ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ë©´ ì†Œìˆ˜ ì•„ë‹˜
             return 0;
     }
-    return 1; // ³ª´©¾î ¶³¾îÁöÁö ¾ÊÀ¸¸é ¼Ò¼ö
+    return 1; // ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ì§€ ì•Šìœ¼ë©´ ì†Œìˆ˜
 }
 
 int main() {
-    int count = 0; // ¼Ò¼ö °³¼ö ¼¼±â
-    int num = 2; // 2ºÎÅÍ ½ÃÀÛ
+    int count = 0; // ì†Œìˆ˜ ê°œìˆ˜ ì„¸ê¸°
+    int num = 2; // 2ë¶€í„° ì‹œì‘
 
-    printf("Ã³À½ 20°³ÀÇ ¼Ò¼ö:\n");
-    while (count < 20) { // 20°³ ¼Ò¼ö Ã£À» ¶§±îÁö
+    printf("ì²˜ìŒ 20ê°œì˜ ì†Œìˆ˜:\n");
+    while (count < 20) { // 20ê°œ ì†Œìˆ˜ ì°¾ì„ ë•Œê¹Œì§€
         if (is_prime(num)) {
             printf("%d ", num);
             count++;
         }
-        num++; // ´ÙÀ½ ¼ıÀÚ·Î ÀÌµ¿
+        num++; // ë‹¤ìŒ ìˆ«ìë¡œ ì´ë™
     }
     printf("\n");
 
     return 0;
 }
 
-int main() {//»ı°¢ ´õ ÇØº¸±â
+int main() {//ìƒê° ë” í•´ë³´ê¸°
     int seconds, hour, minute, second;
-    printf("ÃÊ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
-    scanf_s("%d", &seconds); // ÃÑ ÃÊ ÀÔ·Â ¹Ş±â
+    printf("ì´ˆë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+    scanf_s("%d", &seconds); // ì´ ì´ˆ ì…ë ¥ ë°›ê¸°
 
-    hour = seconds / 3600; // 1½Ã°£ = 3600ÃÊ
-    minute = (seconds % 3600) / 60; // ³²Àº ÃÊ¿¡¼­ ºĞ °è»ê
-    second = seconds % 60; // ³²Àº ÃÊ °è»ê
+    hour = seconds / 3600; // 1ì‹œê°„ = 3600ì´ˆ
+    minute = (seconds % 3600) / 60; // ë‚¨ì€ ì´ˆì—ì„œ ë¶„ ê³„ì‚°
+    second = seconds % 60; // ë‚¨ì€ ì´ˆ ê³„ì‚°
 
-    printf("%dÃÊ´Â %d½Ã°£ %dºĞ %dÃÊ ÀÔ´Ï´Ù.\n", seconds, hour, minute, second);
+    printf("%dì´ˆëŠ” %dì‹œê°„ %dë¶„ %dì´ˆ ì…ë‹ˆë‹¤.\n", seconds, hour, minute, second);
 
     return 0;
 }
